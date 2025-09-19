@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MisinfoScan</title>
+  <link rel="stylesheet" href="static\css\style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>MisinfoScan <small></small></h1>
+      <!-- <p class="tagline">A simple prototype UI to demonstrate an AI-assisted misinformation checker.</p> -->
+    </header>
+
+    <section class="card">
+      <label for="url">Article URL (optional)</label>
+      <input id="url" type="url" placeholder="https://example.com/article" />
+
+      <label for="text">Paste article text (or excerpt)</label>
+      <textarea id="text" rows="8" placeholder="Paste text here..."></textarea>
+
+      <div class="actions">
+        <button id="analyzeBtn">Analyze</button>
+        <button id="clearBtn" class="muted">Clear</button>
+      </div>
+
+      <div id="status" class="status hidden">Analyzing…</div>
+    </section>
+
+    <section id="results" class="card hidden">
+      <h2>Analysis result</h2>
+      <div class="result-row">
+        <div><strong>Verdict:</strong> <span id="verdict"></span></div>
+        <div><strong>Score:</strong> <span id="score"></span>/100</div>
+      </div>
+
+      <div id="explanation" class="explanation"></div>
+
+      <h3>Flagged sentences</h3>
+      <ul id="flaggedList"></ul>
+
+      <h3>Advice</h3>
+      <ul id="adviceList"></ul>
+
+      <div class="actions">
+        <button id="copyReport">Copy JSON report</button>
+        <a id="downloadReport" class="muted" download="misinfo_report.json">Download JSON</a>
+      </div>
+    </section>
+
+    <footer class="muted small">Prototype for hackathon submission — model & infra to be added later.</footer>
+  </main>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
